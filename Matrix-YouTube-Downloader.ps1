@@ -78,7 +78,7 @@ function Test-YtDlp {
         try {
             $v = & $global:ytdlpPath --version 2>&1 | Select-Object -First 1
             $global:ytdlpVersion = $v
-        } catch catch { 
+        } catch { 
             Write-Log "Impossibile leggere la versione di yt-dlp: $($_.Exception.Message)" "WARN"
         }
         Write-Log "yt-dlp trovato: $($global:ytdlpPath) (v$($global:ytdlpVersion))" "OK"
